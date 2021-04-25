@@ -31,7 +31,7 @@ class MainMenu:
             pass
 
         # 2. GITHUB
-        self.gh_class = git.Github()
+        self.gh_class = github.Github()
         # 2a. Installation
         if not self.gh_class.gh_inst_var:
             self.gh_class.gh_inst()

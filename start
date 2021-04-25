@@ -56,8 +56,10 @@ class GeneralMenu:
         execfile('cloud.py')
 
 
+    # Main function
+    def main():
+        gen_menu = GeneralMenu()
+        gen_menu.process_menu(gen_menu.show_menu())
 
-
-gen_menu = GeneralMenu()
-gen_menu.process_menu(gen_menu.show_menu())
-
+if __name__ == "__main__":
+    main()
