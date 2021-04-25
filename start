@@ -12,46 +12,47 @@
 import os
 
 class GeneralMenu:
-	def __init__(self):
-		pass
-	
-	def show_menu(self):
-		print ("""What do you want to work on?
-		1. Git/Github
-		2. Database (Not Available)
-		3. File Upload (Not Available)
-		4. Cloud Resources (Not Available)
-		0. To exit
-		""")
-		menu_selected = input("Select a menu number (1-4): ")
-		return menu_selected
+    def __init__(self):
+        pass
+    
+    def show_menu(self):
+        print ("""What do you want to work on?
+        1. Git/Github
+        2. Database (Not Available)
+        3. File Upload (Not Available)
+        4. Cloud Resources (Not Available)
+        0. To exit
+        """)
+        menu_selected = input("Select a menu number (1-4): ")
+        return menu_selected
 
-	def process_menu(self, argument):
-		method_name = 'menu_' + str(argument)
-        # Get the method from 'self'. Default to a lambda.
-		method = getattr(self, method_name, lambda: "Invalid menu option")
-		# Call the method as we return it
-		return method()
+    def process_menu(self, argument):
+        method_name = 'menu_' + str(argument)
+# Get the method from 'self'. Default to a lambda.
+        method = getattr(self, method_name, lambda: "Invalid menu option")
+        # Call the method as we return it
+        return method()
 
-	# 1. Version Control
-	# Git, Github
-	def menu_1(self):
-		os.system('python git.py')
+    # 1. Version Control
+    # Git, Github
+    def menu_1(self):
+        import git
+        # os.system('python git.py')
 
-	# 2. Database (Not Available)
-	# SQLite, MySQL, PostgreSQL, MongoDB
-	def menu_2(self):
-		execfile('db.py')
+    # 2. Database (Not Available)
+    # SQLite, MySQL, PostgreSQL, MongoDB
+    def menu_2(self):
+        execfile('db.py')
 
-	# 3. File Upload (Not Available)
-	# FTP, SFTP, SCP
-	def menu_3(self):
-		execfile('upload.py')
+    # 3. File Upload (Not Available)
+    # FTP, SFTP, SCP
+    def menu_3(self):
+        execfile('upload.py')
 
-	# 4. Cloud Resources (Not Available)
-	# 
-	def menu_4(self):
-		execfile('cloud.py')
+    # 4. Cloud Resources (Not Available)
+    # 
+    def menu_4(self):
+        execfile('cloud.py')
 
 
 
