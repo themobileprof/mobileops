@@ -37,6 +37,7 @@ class GeneralMenu:
     # Git, Github
     def menu_1(self):
         import git
+        git.main()
         # os.system('python git.py')
 
     # 2. Database (Not Available)
