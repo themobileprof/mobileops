@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # Python 3
 
 # Author: Samuel Anyaele - TheMobileprof.com
@@ -6,6 +7,7 @@
 import os
 import time
 from modules import git
+from modules import github
 from modules import misc
 
 class MainMenu:
@@ -135,7 +137,7 @@ class MainMenu:
             exit()
 
         # if forked, Pull Request else Merge
-        if self.gh_class.confirm_fork():
+        if self.git_class.confirm_fork():
             # github pull request to master xxxxxxx
             self.gh_class.gh_pr_new()
         else:
@@ -159,9 +161,11 @@ class MainMenu:
         self.git_class.git_pull()
 
 
-# Process Menu
-menu = MainMenu()
-selected_option = menu.show_menu()
-menu.process_menu(selected_option)
+def main():
+    # Process Menu
+    menu = MainMenu()
+    selected_option = menu.show_menu()
+    menu.process_menu(selected_option)
 
-
+if __name__ == "__main__":
+    main()
